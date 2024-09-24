@@ -10,30 +10,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        body {
-            position: relative;
-            overflow: hidden; /* Ẩn thanh cuộn */
-        }
-        /* //QUOC */
-        .heart {
-            position: absolute;
-            font-size: 20px; /* Kích thước của biểu tượng trái tim */
-            color: red; /* Màu sắc của biểu tượng trái tim */
-            animation: fall 3s linear forwards;
-            z-index: 9999; /* Đảm bảo trái tim nằm trên các phần tử khác */
-        }
-        @keyframes fall {
-            0% {
-                top: -10%;
-                opacity: 1;
-            }
-            100% {
-                top: 100%;
-                opacity: 0;
-            }
-        }
-    </style>
     <title>Mời sinh nhật thầy Trúc</title>
 </head>
 <body>
@@ -74,30 +50,5 @@
             </div>
         </div>
     </div>
-
-    <script>
-        document.getElementById('birthdayButton').addEventListener('click', function() {
-            for (let i = 0; i < 10; i++) { // Tạo 10 trái tim
-                createHeart();
-            }
-        });
-
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.innerHTML = '<i class="fas fa-heart"></i>'; // Sử dụng biểu tượng trái tim từ Font Awesome
-            heart.style.left = Math.random() * 100 + 'vw'; // Vị trí trái tim ngẫu nhiên theo chiều ngang
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's'; // Thay đổi thời gian rơi ngẫu nhiên
-            document.body.appendChild(heart);
-
-            // Xóa trái tim sau khi hoàn thành animation
-            heart.addEventListener('animationend', () => {
-                heart.remove();
-            });
-        }
-
-        // Tạo liên tục trái tim rơi
-        setInterval(createHeart, 500); // Tạo một trái tim mỗi 500ms
-    </script>
 </body>
 </html>
